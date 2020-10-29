@@ -1,4 +1,7 @@
 opencv_python_headless==4.1.2.30
+# opencv-python
+# opencv-python-headless
+# opencv-python-contrib
 natsort
 numpy
 tqdm
