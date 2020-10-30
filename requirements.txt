@@ -8,9 +8,9 @@ tqdm
 lmdb
 scikit_image
 matplotlib
-torchsummary
-nltk
-torchvision
+# torchsummary
+# nltk
+# torchvision
 imageio
 six
 scipy
@@ -19,4 +19,4 @@ Pillow
 scikit_learn
 horovod
 editdistance
-git+https://github.com/google/gin-config
+# git+https://github.com/google/gin-config
