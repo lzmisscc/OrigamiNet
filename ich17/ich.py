@@ -7,7 +7,8 @@ from PIL import Image
 import os.path as osp
 import unicodedata
 
-base  = sys.argv[1]
+# base  = sys.argv[1]
+base = "dataset/"
 
 xml    = osp.join(base,'page/')
 pages  = glob.glob(xml+'*.xml')
