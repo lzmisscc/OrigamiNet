@@ -9,7 +9,7 @@ import torch.distributed as dist
 import numpy as np
 import editdistance
 from nltk.translate.bleu_score import sentence_bleu
-import horovod.torch as hvd
+# import horovod.torch as hvd
 
 from utils import Averager
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
