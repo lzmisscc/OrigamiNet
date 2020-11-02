@@ -1,7 +1,7 @@
 import torch
 import torch.distributed as dist
 
-import horovod.torch as hvd
+# import horovod.torch as hvd
 
 from copy import deepcopy
 from collections import OrderedDict
