@@ -1,6 +1,7 @@
 port = 12345
 manualSeed = 1111
 dist = 'DDP'
+num_gpu = 1
 
 n_channels = 3
 o_classes = 92
