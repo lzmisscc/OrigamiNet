@@ -169,14 +169,14 @@ def train(opt, AMP, WdB, train_data_path, train_data_list, test_data_path, test_
         print(optimizer)
         print(opt_log)
 
-    start_time = time.time()
-    best_accuracy = -1
-    best_norm_ED = 1e+6
-    best_CER = 1e+6
-    i = 0
-    gAcc = 1
-    epoch = 1
-    btReplay = False and AMP
+    start_time        = time.time()
+    best_accuracy     = -1
+    best_norm_ED      = 1e+6
+    best_CER          = 1e+6
+    i                 = 0
+    gAcc              = 1
+    epoch             = 1
+    btReplay          = False and AMP
     max_batch_replays = 3
 
     if HVD3P: train_sampler.set_epoch(epoch)
