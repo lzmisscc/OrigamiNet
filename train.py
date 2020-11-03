@@ -357,7 +357,7 @@ if __name__ == '__main__':
     if OnceExecWorker:
         rSeed(opt.manualSeed)
 
-    # opt.num_gpu = torch.cuda.device_count()
+    opt.num_gpu = ginM('num_gpu')
     
 
     if pO.HVD:

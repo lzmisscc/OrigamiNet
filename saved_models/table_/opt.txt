@@ -1,0 +1,340 @@
+------------ Options -------------
+gin: table_2021/ich.gin
+manualSeed: 1111
+port: 12345
+num_gpu: 4
+world_size: 4
+rank: 0
+---------------------------------------
+# Macros:
+# ==============================================================================
+GradCheck = 1
+n_channels = 3
+o_classes = 92
+
+# Parameters for GateBlock:
+# ==============================================================================
+GateBlock.GradCheck = %GradCheck
+
+# Parameters for InitBlock:
+# ==============================================================================
+InitBlock.n_channels = %n_channels
+
+# Parameters for MaxPool2d:
+# ==============================================================================
+MaxPool2d.ceil_mode = False
+MaxPool2d.dilation = 1
+MaxPool2d.kernel_size = (2, 2)
+MaxPool2d.padding = 0
+MaxPool2d.return_indices = False
+MaxPool2d.stride = None
+
+# Parameters for OrigamiNet:
+# ==============================================================================
+OrigamiNet.GradCheck = %GradCheck
+OrigamiNet.fup = 33
+OrigamiNet.lreszs = \
+    {0: @MaxPool2d(),
+     2: @MaxPool2d(),
+     4: @PadPool(),
+     6: @PadPool(),
+     8: @PadPool(),
+     10: @s1/Upsample(),
+     11: @s2/Upsample()}
+OrigamiNet.lszs = {0: 128, 2: 256, 4: 512, 11: 256}
+OrigamiNet.n_channels = %n_channels
+OrigamiNet.nlyrs = 12
+OrigamiNet.o_classes = %o_classes
+OrigamiNet.reduceAxis = 3
+OrigamiNet.wmul = 1.0
+
+# Parameters for PadPool:
+# ==============================================================================
+# None.
+
+# Parameters for train:
+# ==============================================================================
+train.AMP = False
+train.WdB = False
+train.continue_model = ''
+train.experiment_name = 'table_'
+train.lr = 0.01
+train.num_iter = 0
+train.test_data_list = '/data/liuzhuang/PubTabNet/val.list'
+train.test_data_path = ''
+train.train_batch_size = 1
+train.train_data_list = '/data/liuzhuang/PubTabNet/train.list'
+train.train_data_path = ''
+train.valInterval = 500
+train.val_batch_size = 1
+train.wdbprj = 'pt-fpr-ich17'
+train.workers = 4
+
+# Parameters for s1/Upsample:
+# ==============================================================================
+s1/Upsample.align_corners = True
+s1/Upsample.mode = 'bilinear'
+s1/Upsample.scale_factor = None
+s1/Upsample.size = (3500, 31)
+
+# Parameters for s2/Upsample:
+# ==============================================================================
+s2/Upsample.align_corners = True
+s2/Upsample.mode = 'bilinear'
+s2/Upsample.scale_factor = None
+s2/Upsample.size = (7200, 15)
+------------ Options -------------
+gin: table_2021/ich.gin
+manualSeed: 1111
+port: 12345
+num_gpu: 4
+world_size: 4
+rank: 0
+---------------------------------------
+# Macros:
+# ==============================================================================
+GradCheck = 1
+n_channels = 3
+o_classes = 92
+
+# Parameters for GateBlock:
+# ==============================================================================
+GateBlock.GradCheck = %GradCheck
+
+# Parameters for InitBlock:
+# ==============================================================================
+InitBlock.n_channels = %n_channels
+
+# Parameters for MaxPool2d:
+# ==============================================================================
+MaxPool2d.ceil_mode = False
+MaxPool2d.dilation = 1
+MaxPool2d.kernel_size = (2, 2)
+MaxPool2d.padding = 0
+MaxPool2d.return_indices = False
+MaxPool2d.stride = None
+
+# Parameters for OrigamiNet:
+# ==============================================================================
+OrigamiNet.GradCheck = %GradCheck
+OrigamiNet.fup = 33
+OrigamiNet.lreszs = \
+    {0: @MaxPool2d(),
+     2: @MaxPool2d(),
+     4: @PadPool(),
+     6: @PadPool(),
+     8: @PadPool(),
+     10: @s1/Upsample(),
+     11: @s2/Upsample()}
+OrigamiNet.lszs = {0: 128, 2: 256, 4: 512, 11: 256}
+OrigamiNet.n_channels = %n_channels
+OrigamiNet.nlyrs = 12
+OrigamiNet.o_classes = %o_classes
+OrigamiNet.reduceAxis = 3
+OrigamiNet.wmul = 1.0
+
+# Parameters for PadPool:
+# ==============================================================================
+# None.
+
+# Parameters for train:
+# ==============================================================================
+train.AMP = False
+train.WdB = False
+train.continue_model = ''
+train.experiment_name = 'table_'
+train.lr = 0.01
+train.num_iter = 0
+train.test_data_list = '/data/liuzhuang/PubTabNet/val.list'
+train.test_data_path = ''
+train.train_batch_size = 1
+train.train_data_list = '/data/liuzhuang/PubTabNet/train.list'
+train.train_data_path = ''
+train.valInterval = 500
+train.val_batch_size = 1
+train.wdbprj = 'pt-fpr-ich17'
+train.workers = 4
+
+# Parameters for s1/Upsample:
+# ==============================================================================
+s1/Upsample.align_corners = True
+s1/Upsample.mode = 'bilinear'
+s1/Upsample.scale_factor = None
+s1/Upsample.size = (3500, 31)
+
+# Parameters for s2/Upsample:
+# ==============================================================================
+s2/Upsample.align_corners = True
+s2/Upsample.mode = 'bilinear'
+s2/Upsample.scale_factor = None
+s2/Upsample.size = (7200, 15)
+------------ Options -------------
+gin: table_2021/ich.gin
+manualSeed: 1111
+port: 12345
+num_gpu: 1
+world_size: 1
+rank: 0
+---------------------------------------
+# Macros:
+# ==============================================================================
+GradCheck = 1
+n_channels = 3
+o_classes = 92
+
+# Parameters for GateBlock:
+# ==============================================================================
+GateBlock.GradCheck = %GradCheck
+
+# Parameters for InitBlock:
+# ==============================================================================
+InitBlock.n_channels = %n_channels
+
+# Parameters for MaxPool2d:
+# ==============================================================================
+MaxPool2d.ceil_mode = False
+MaxPool2d.dilation = 1
+MaxPool2d.kernel_size = (2, 2)
+MaxPool2d.padding = 0
+MaxPool2d.return_indices = False
+MaxPool2d.stride = None
+
+# Parameters for OrigamiNet:
+# ==============================================================================
+OrigamiNet.GradCheck = %GradCheck
+OrigamiNet.fup = 33
+OrigamiNet.lreszs = \
+    {0: @MaxPool2d(),
+     2: @MaxPool2d(),
+     4: @PadPool(),
+     6: @PadPool(),
+     8: @PadPool(),
+     10: @s1/Upsample(),
+     11: @s2/Upsample()}
+OrigamiNet.lszs = {0: 128, 2: 256, 4: 512, 11: 256}
+OrigamiNet.n_channels = %n_channels
+OrigamiNet.nlyrs = 12
+OrigamiNet.o_classes = %o_classes
+OrigamiNet.reduceAxis = 3
+OrigamiNet.wmul = 1.0
+
+# Parameters for PadPool:
+# ==============================================================================
+# None.
+
+# Parameters for train:
+# ==============================================================================
+train.AMP = False
+train.WdB = False
+train.continue_model = ''
+train.experiment_name = 'table_'
+train.lr = 0.01
+train.num_iter = 0
+train.test_data_list = '/data/liuzhuang/PubTabNet/val.list'
+train.test_data_path = ''
+train.train_batch_size = 1
+train.train_data_list = '/data/liuzhuang/PubTabNet/train.list'
+train.train_data_path = ''
+train.valInterval = 500
+train.val_batch_size = 1
+train.wdbprj = 'pt-fpr-ich17'
+train.workers = 4
+
+# Parameters for s1/Upsample:
+# ==============================================================================
+s1/Upsample.align_corners = True
+s1/Upsample.mode = 'bilinear'
+s1/Upsample.scale_factor = None
+s1/Upsample.size = (3500, 31)
+
+# Parameters for s2/Upsample:
+# ==============================================================================
+s2/Upsample.align_corners = True
+s2/Upsample.mode = 'bilinear'
+s2/Upsample.scale_factor = None
+s2/Upsample.size = (7200, 15)
+------------ Options -------------
+gin: table_2021/ich.gin
+manualSeed: 1111
+port: 12345
+num_gpu: 1
+world_size: 1
+rank: 0
+---------------------------------------
+# Macros:
+# ==============================================================================
+GradCheck = 1
+n_channels = 3
+o_classes = 92
+
+# Parameters for GateBlock:
+# ==============================================================================
+GateBlock.GradCheck = %GradCheck
+
+# Parameters for InitBlock:
+# ==============================================================================
+InitBlock.n_channels = %n_channels
+
+# Parameters for MaxPool2d:
+# ==============================================================================
+MaxPool2d.ceil_mode = False
+MaxPool2d.dilation = 1
+MaxPool2d.kernel_size = (2, 2)
+MaxPool2d.padding = 0
+MaxPool2d.return_indices = False
+MaxPool2d.stride = None
+
+# Parameters for OrigamiNet:
+# ==============================================================================
+OrigamiNet.GradCheck = %GradCheck
+OrigamiNet.fup = 33
+OrigamiNet.lreszs = \
+    {0: @MaxPool2d(),
+     2: @MaxPool2d(),
+     4: @PadPool(),
+     6: @PadPool(),
+     8: @PadPool(),
+     10: @s1/Upsample(),
+     11: @s2/Upsample()}
+OrigamiNet.lszs = {0: 128, 2: 256, 4: 512, 11: 256}
+OrigamiNet.n_channels = %n_channels
+OrigamiNet.nlyrs = 12
+OrigamiNet.o_classes = %o_classes
+OrigamiNet.reduceAxis = 3
+OrigamiNet.wmul = 1.0
+
+# Parameters for PadPool:
+# ==============================================================================
+# None.
+
+# Parameters for train:
+# ==============================================================================
+train.AMP = False
+train.WdB = False
+train.continue_model = ''
+train.experiment_name = 'table_'
+train.lr = 0.01
+train.num_iter = 0
+train.test_data_list = '/data/liuzhuang/PubTabNet/val.list'
+train.test_data_path = ''
+train.train_batch_size = 1
+train.train_data_list = '/data/liuzhuang/PubTabNet/train.list'
+train.train_data_path = ''
+train.valInterval = 500
+train.val_batch_size = 1
+train.wdbprj = 'pt-fpr-ich17'
+train.workers = 4
+
+# Parameters for s1/Upsample:
+# ==============================================================================
+s1/Upsample.align_corners = True
+s1/Upsample.mode = 'bilinear'
+s1/Upsample.scale_factor = None
+s1/Upsample.size = (3500, 31)
+
+# Parameters for s2/Upsample:
+# ==============================================================================
+s2/Upsample.align_corners = True
+s2/Upsample.mode = 'bilinear'
+s2/Upsample.scale_factor = None
+s2/Upsample.size = (7200, 15)
