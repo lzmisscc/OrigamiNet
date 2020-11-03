@@ -2,3 +2,4 @@
 *.tbz2
 dataset/
 __pycache__/
+*.pth
